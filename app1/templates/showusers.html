@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for msg in messages %}
+    {{msg}}
+    {% endfor %}
+
+    
+   
+    <table border="1px"  >
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>PLACE</th>
+            <th>EMAIL</th>
+            <th>ACTION</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{user.id}}</td>    
+            <td>{{user.Name}}</td>    
+            <td>{{user.Age}}</td>    
+            <td>{{user.Place}}</td>    
+            <td>{{user.Email}}</td>    
+            <td>
+                <a href="{% url 'app1:delete' user.id %}">delete</a>
+                <a href="{% url 'app1:update' user.id %}">update</a>
+            </td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

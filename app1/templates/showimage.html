@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for msg in messages %}
+    {{msg}}
+    {% endfor %}
+
+    
+   
+    <table border="1px"  cellpadding="10px" bgcolor="lightblue">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>IMAGE</th>
+            <th>PRICE</th>
+        </tr>
+        {% for image in images %}
+        <tr>
+            <td>{{image.id}}</td>    
+            <td>{{image.Name}}</td>    
+            <td>
+                <img src="{{image.Photo.url}}" alt="" height="200px" width="300px">
+            </td>    
+            <td>{{image.Price}}</td>    
+            
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
